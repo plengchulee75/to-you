@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day Kub Ba'bee ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: pink;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 900px;
+            height: 80vh;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        /* ส่วนของแชท */
+        .chat-box {
+            width: 50%;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* ปรับแต่งกล่องข้อความ */
+        .message {
+            font-size: 18px;
+            color: #000;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+        }
+
+        /* ส่วนของรูปภาพ */
+        .image-box {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0 20px 20px 0;
+        }
+
+        /* ปุ่ม */
+        button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Happy Valentine's Day Kub Ba'bee ❤️</h1>
+
+    <div class="container">
+        <!-- กล่องแชท -->
+        <div id="loveMessage" class="chat-box"></div>
+
+        <!-- รูปภาพที่อัปโหลด -->
+        <div class="image-box">
+            <img src="valen.jpg" alt="เลาฉองคนหนึ่งตัว">
+        </div>
+    </div>
+
+    <!-- ปุ่ม -->
+    <button onclick="showLoveMessage()">กดสิกดเลย !</button>
+    
+    <script>
+        const messages = [
+            "ตะเอ๋ บะบี๋เค้าเปิดมาจริงๆด้วยยย",
+            "ปิดตะคันนั้น",
+            "อะ หยอกกกกกกกกกกกก",
+            "555555555 แอบยิ้มหรอ ?",
+            "ตั้งใจอ่าน เค้ามีอะไรจะบอก....",
+            "....",
+            "ขอตังหน่อยจิ 💸",
+            "อะ หยอกเล่นนนน",
+            "แต่ได้ก็ดี ฮิฮิฮิฮิ",
+            "มามามา..จริงจังแล้วววว!",
+            "เค้าอยากจะบอกว่าาาาาาาาา",
+            "ว่าาาาาาา ....",
+            "ขอบคุณที่ใจดีกับเค้ามาตลอดๆเลยนะ💖",
+            "เค้าโชคดีมากๆ ที่มีเธออยู่ข้างๆ",
+            "ขอบคุณทุกสิ่งทุกอย่างที่ผ่านมานะ ขอบคุณจริงๆ",
+            "เธอรู้ใช่มั้ยยย ?",
+            "ว่าเค้า.. ก็รักเธอ🤍",
+            "ไหนๆ ก็วัน Valentine's แล้วว",
+            "เค้าก็ขอให้เรามีกันและกันแบบนี้ไปนานๆ😘",
+            "ขอให้เธอใจดีกับเค้า ถนุถนอมรักเค้าแบบนี้",
+            "ไปนานนนนนนนๆ",
+            "เค้าก็จะรักเธอแบบที่รักอยู่ทุกวันนี้ ..",
+            "จะรักเธอมากขึ้นได้..แต่น้อยลงไม่ได้ วะฮ่าๆ",
+            "สุดท้ายและ",
+            "เธอ",
+            "เธอรู้ใช่มั้ย..",
+            "ว่าเค้ารักเธอทุกวัน ไม่ใช่แค่วันวาเลนไทน์ 💞"
+        ];
+
+        let currentIndex = 0;
+
+        function showLoveMessage() {
+            if (currentIndex < messages.length) {
+                const newMessage = document.createElement("p");
+                newMessage.textContent = messages[currentIndex];
+                newMessage.classList.add("message");
+
+                document.getElementById("loveMessage").appendChild(newMessage);
+
+                // เลื่อนลงอัตโนมัติ
+                newMessage.scrollIntoView({ behavior: "smooth", block: "end" });
+
+                currentIndex++;
+            } else {
+                alert("จบแย้วววว ❤️ อ้วนรักพี่ที่สุด!");
+            }
+        }
+    </script>
+
+</body>
+</html>
